@@ -16,9 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from export.views import MeetingExportAPIView
+from search.views import MeetingSearchAPIView
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/export/', MeetingExportAPIView.as_view(), name="export-api")
+    path('api/export/', MeetingExportAPIView.as_view(), name="export-api"),
+    path('api/<str:key>/export/', MeetingExportAPIView.as_view(), name="export-api-from-url"),
+    path('api/<str:key>/search/', MeetingSearchAPIView.as_view(), name="search-api")
 ]

@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'db',
     'rails-db',
-    'export'
+    'export',
+    'search'
 ]
 
 MIDDLEWARE = [
